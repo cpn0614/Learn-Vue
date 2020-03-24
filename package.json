@@ -1,0 +1,32 @@
+{
+  "name": "learn-vue",
+  "version": "1.0.0",
+  "description": "a study record about vue",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "vuepress": "^1.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cpn0614/Learn-Vue.git"
+  },
+  "keywords": [
+    "vue",
+    "javascript"
+  ],
+  "author": "Graduc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cpn0614/Learn-Vue/issues"
+  },
+  "homepage": "https://github.com/cpn0614/Learn-Vue#readme"
+}
