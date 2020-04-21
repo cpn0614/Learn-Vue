@@ -21,7 +21,50 @@ module.exports = {
       // }
       '/record/': [
         '',
-        'vue'
+        // 'vue',
+        {
+          title: 'js深入',
+          collapsable: false,
+          path: 'deepJavascript',
+          // children: ['/guide/'],
+          siderbarDepth: 2,
+        },
+        {
+          title: '算法',
+          collapsable: false,
+          path: 'algorithm',
+          // children: ['/guide/'],
+          siderbarDepth: 2,
+        },
+        {
+          title: 'webpack',
+          collapsable: false,
+          path: 'webpack',
+          // children: ['/guide/'],
+          siderbarDepth: 2,
+        },
+        {
+          title: 'vue',
+          collapsable: false,
+          path: 'vue',
+          // children: ['/guide/'],
+          siderbarDepth: 2,
+        },
+        {
+          title: 'react',
+          collapsable: false,
+          path: 'react',
+          // children: ['/guide/'],
+          siderbarDepth: 2,
+        },
+      ],
+      'tools': [
+        {
+          title: '方法总结',
+          collapsable: false,
+          path: 'index',
+          siderbarDepth: 2,
+        }
       ],
       '/about/': [
         ''

@@ -5,4 +5,5 @@ let obj = {
   age: 19
 }
 let observer = new Observer(obj)
-console.log(observer.value.name)
+console.log(observer.value.name) //get
+console.log(observer.value.name = 'lisi') //set
