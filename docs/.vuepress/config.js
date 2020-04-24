@@ -6,6 +6,7 @@ module.exports = {
     nav: [
       { text: '主页', link: '/' },
       { text: '记录', link: '/record/' },
+      { text: '工具', link: '/tools/' },
       { text: 'about', link: '/about/' }
     ],
     // sidebar: 'auto',
@@ -58,12 +59,13 @@ module.exports = {
           siderbarDepth: 2,
         },
       ],
-      'tools': [
+      '/tools/': [
+        '',
         {
-          title: '方法总结',
+          title: '前端工具',
           collapsable: false,
-          path: 'index',
-          siderbarDepth: 2,
+          path: 'tool',
+          siderbarDepth: 3,
         }
       ],
       '/about/': [
