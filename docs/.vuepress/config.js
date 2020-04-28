@@ -1,7 +1,15 @@
 module.exports = {
   title: '学习记录',
   dest: './docs/.vuepress/dist',
+  head: [
+    ['script', {
+      src : 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
+      'data-ad-client': "ca-pub-9531008710311384",
+      async: 'async'
+    }]
+  ],
   evergreen: true,
+  description: 'Graduc,学习记录',
   themeConfig: {
     nav: [
       { text: '主页', link: '/' },
@@ -63,6 +71,7 @@ module.exports = {
         '',
         {
           title: '前端工具',
+          description: '前端，工具',
           collapsable: false,
           path: 'tool',
           siderbarDepth: 3,
@@ -71,6 +80,7 @@ module.exports = {
       '/about/': [
         ''
       ]
-    }
+    },
+    lastUpdated: '上次更新：'
   }
 }
