@@ -85,3 +85,25 @@ var addTwoNumbers = function(l1, l2) {
   add && (temp.next = new ListNode(add))
   return node.next
 };
+
+
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function(s) {
+  let maxLength = 0, str = ''
+  if (s.length === 1) return 1
+  s = s.split('')
+  for (let i = 0; i < s.length; i ++) {
+    const el = s[i]
+    if (str.indexOf(el) < 0) str += el
+    else {
+      maxLength = maxLength < str.length ? str.length : maxLength
+      str = str.substring(str.indexOf(el)+1) + el
+    }
+  }
+  return maxLength = maxLength < str.length ? str.length : maxLength
+};
+
+console.log(lengthOfLongestSubstring("pwwkew"))

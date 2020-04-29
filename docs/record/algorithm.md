@@ -161,3 +161,50 @@
        return head
    };
   ```
+
+## 无重复字符的最长子串
+### 难度
+中等
+
+### 描述
+[leetcode题号](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/): 3   
+给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。   
+示例 1:   
+
+输入: "abcabcbb"   
+输出: 3    
+解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。   
+示例 2:   
+
+输入: "bbbbb"   
+输出: 1   
+解释: 因为无重复字符的最长子串是 "b"，所以其长度为 1。   
+示例 3:   
+
+输入: "pwwkew"   
+输出: 3   
+解释: 因为无重复字符的最长子串是 "wke"，所以其长度为 3。
+     请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。   
+
+### 解法
+  1. 思路：将字符串拆分成数组，遍历数组。str当前子串，maxLength记录最大长度。当str中不存在当前遍历的字符时，就将字符加入str中。如果存在，就比较当前str长度和之前记录的长度，记录长度大的一个。同时将str从重复的第一个字符开始拆分，并加入当前字符，继续遍历。最后，返回最大长度（在进行一次判断，防止未进入else时length为0的情况）
+   ```javascript
+   /**
+    * @param {string} s
+    * @return {number}
+    */
+   var lengthOfLongestSubstring = function(s) {
+     let maxLength = 0, str = ''
+     if (s.length === 1) return 1
+     s = s.split('')
+     for (let i = 0; i < s.length; i ++) {
+       const el = s[i]
+       if (str.indexOf(el) < 0) str += el
+       else {
+         maxLength = maxLength < str.length ? str.length : maxLength
+         str = str.substring(str.indexOf(el)+1) + el
+       }
+     }
+     return maxLength = maxLength < str.length ? str.length : maxLength
+   };
+   ```
