@@ -6,6 +6,10 @@ module.exports = {
       src : 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js',
       'data-ad-client': "ca-pub-9531008710311384",
       async: 'async'
+    }],
+    ['script', {
+      src : '/baidu.js',
+      async: 'async'
     }]
   ],
   evergreen: true,
