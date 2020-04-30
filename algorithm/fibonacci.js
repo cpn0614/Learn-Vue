@@ -108,3 +108,16 @@ var lengthOfLongestSubstring = function(s) {
 
 // console.log(lengthOfLongestSubstring("pwwkew"))
 
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number}
+ */
+var findMedianSortedArrays = function(nums1, nums2) {
+    let num = nums1.concat(nums2).sort((a, b) => a - b)
+    let sortNum = num.length
+    let res = sortNum / 2
+    return sortNum % 2 === 0? (num[res - 1] + num[res]) / 2 : num[Math.floor(res)]
+};
+
+console.log(findMedianSortedArrays([1, 3], [2]))

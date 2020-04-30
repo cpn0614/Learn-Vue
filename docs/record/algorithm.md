@@ -208,3 +208,21 @@
      return maxLength = maxLength < str.length ? str.length : maxLength
    };
    ```
+
+
+## 个人练习
+### 多维数组转一维数组
+```javascript
+function toArray(arr) {
+  let res = []; 
+  for(let i = 0;i < arr.length;i ++){
+    if(Array.isArray(arr[i])){
+      res = res.concat(toArray(arr[i]));
+    }else{
+      res.push(arr[i]);
+    } 
+  } 
+  return res; 
+}
+```
+
