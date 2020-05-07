@@ -50,7 +50,7 @@
       main: '../src/entry.js'
     } 
   ```
-2. 对象语法
+2. 对象语法  
    例如：
    1. 分离 应用程序(app) 和 第三方库(vendor) 入口时可以这样写
       ```javascript
@@ -95,4 +95,43 @@
 > 配置 output 选项可以控制 webpack 如何向硬盘写入编译文件。注意，即使可以存在多个入口起点，但只指定一个输出配置。
 1. 配置包括两个参数：`filename, path`，顾名思义，就是配置文件名和输出的绝对路径。那么，当上一部分中多个输入的时候怎么办呢，文档中说可以用占位符来确保每个文件具有唯一的名称。
 2. 占位符有`[name]`、`[id]`、`[hash]`、`[chunkhash]`、`[query]`几种，有什么区别呢
-   |!--|
+   |**模板**|**名称**|
+   |:-|:-|
+   |[name]|模块名称|
+   |[id]|模块标识符(module identifier)|
+   |[hash]|模块标识符(module identifier)的 hash|
+   |[chunkhash]|chunk 内容的 hash|
+   |[query]|模块的 query，例如，文件名 ? 后面的字符串|
+
+### loader
+> loader 用于对模块的源代码进行转换。loader 可以使你在 `import` 或"加载"模块时预处理文件。因此，loader 类似于其他构建工具中“任务(task)”，并提供了处理前端构建步骤的强大方法。loader 可以将文件从不同的语言（如 TypeScript）转换为 JavaScript，或将内联图像转换为 data URL。loader 甚至允许你直接在 JavaScript 模块中 `import` CSS文件！
+
+1. 示例：
+   ```javascript
+   module.exports = {
+     module: {
+       rules: [
+         // 单个文件可以指定多个loader
+         // 对css文件使用css-loader加载css文件
+         {
+           test: /\.css$/,
+           //use: 'css-loader'
+           use: [
+             { loader: 'style-loader' },
+             {
+               loader: 'css-loader',
+               options: {
+                 module: true
+               }
+             }
+           ]
+         },
+         // 对ts文件使用ts-loader转换为JavaScript
+         {
+           test: /\.ts/,
+           use: 'ts-loader'
+         }
+       ]
+     }
+   }
+   ```

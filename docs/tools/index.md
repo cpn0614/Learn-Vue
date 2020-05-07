@@ -32,6 +32,20 @@ new Date().toLocaleDateString() //2019/8/20
 new Date().toLocaleString('zh-CN', {hour12: false}) //2019/8/20 10:46:45
 ```
 
-
+## 多数组转一维
+```javascript
+function toOneArray(arr) {
+  let res = []; 
+  for(let i = 0;i < arr.length;i ++){
+    if(Array.isArray(arr[i])){
+      res = res.concat(toArray(arr[i]));
+    }else{
+      res.push(arr[i]);
+    } 
+  } 
+  return res; 
+}
+console.log(toOneArray([1,3,[5,7,[9]]])) // [1, 3, 5, 7, 9]
+```
 
 

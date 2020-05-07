@@ -32,6 +32,34 @@ function quickSort(arr) {
 
 // console.log(quickSort([1, 14, 21, 3 , 2 , 51, 34]))
 
+/**
+ * 插入排序
+ * @param {Array} arr 
+ */
+
+function insertSort(arr) {
+  if (arr.length === 0) return []
+  if (arr.length === 1) return arr
+  let sortArr = [arr[0]]
+  for (let i = 1; i < arr.length; i ++) {
+    let el = arr[i]
+    for (let j = i; j > 0; j --) {
+      let element = sortArr[j - 1]
+      if (element >= el) {
+        sortArr[j] = element
+        if (j == 1) sortArr[0] = el
+      }
+      else {
+        sortArr[j] = el
+        break
+      }
+    }
+  }
+  return sortArr
+}
+
+console.log(insertSort([3]))
+
 
 function calDate(str) {
   let date = new Date(str.replace(/\u5E74|\u6708|\u65E5/g, ' '))
@@ -49,7 +77,7 @@ function num(str) {
   return parseFloat(str).toFixed(4)
 }
 
-function toArray(arr) {
+function toOneArray(arr) {
   let res = []; 
   for(let i = 0;i < arr.length;i ++){
     if(Array.isArray(arr[i])){
@@ -61,4 +89,4 @@ function toArray(arr) {
   return res; 
 }
 
-console.log(toArray([1,3,[5,7,[9]]]))
+// console.log(toArray([1,3,[5,7,[9]]]))

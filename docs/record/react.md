@@ -58,7 +58,7 @@
 on的事件监听只能放在html标签上，组件标签上没用效果   
 同时 this不会指向方法中，而会打印出null或undefined，需要使用bind   
 绑定方式类似于：  
-```javascript
+```jsx
 <p onClick={this.handleClick.bind(this)}>react是{isHelpful
  ? '有用的'
  : '没用的' //null会忽略该表达式插入 可以做到隐藏、显示某些元素

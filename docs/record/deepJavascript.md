@@ -58,3 +58,32 @@
        }
       ```
 2. 插入排序
+   1. 从第一个元素开始，该元素可以认为已经被排序；
+   2. 取出下一个元素，在已经排序的元素序列中从后向前扫描；
+   3. 如果该元素（已排序）大于新元素，将该元素移到下一位置；
+   4. 重复步骤3，直到找到已排序的元素小于或者等于新元素的位置；
+   5. 将新元素插入到该位置后；
+   6. 重复步骤2~5。
+   7. 实现：
+      ```javascript
+      function insertSort(arr) {
+        if (arr.length === 0) return []
+        if (arr.length === 1) return arr
+        let sortArr = [arr[0]]
+        for (let i = 1; i < arr.length; i ++) {
+          let el = arr[i]
+          for (let j = i; j > 0; j --) {
+            let element = sortArr[j - 1]
+            if (element >= el) {
+              sortArr[j] = element
+              if (j == 1) sortArr[0] = el
+            }
+            else {
+              sortArr[j] = el
+              break
+            }
+          }
+        }
+        return sortArr
+      }
+      ```
