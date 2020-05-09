@@ -8,7 +8,11 @@ module.exports = {
       async: 'async'
     }],
     ['script', {
-      src : '/baidu.js',
+      src : '/js/baidu.js',
+      async: 'async'
+    }],
+    ['script', {
+      src : '/js/bdtj.js',
       async: 'async'
     }]
   ],
